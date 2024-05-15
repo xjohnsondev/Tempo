@@ -1,0 +1,47 @@
+.sidebar {
+    position: absolute;
+    /* background-color: #191D88; */
+    height: 100vh;
+    width: 80px;
+}
+
+.title{
+    margin-left: 20px;
+    color: #EE4C7C;
+}
+
+.icon-bar {
+    border-radius: 8px;
+    width: 80%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    background-color: #A91D3A;
+    padding-bottom: 20px;
+}
+
+.fa-solid {
+    font-size: 180%;
+    color: #EEEEEE;
+    margin-top: 20px;
+}
+
+.fa-solid:hover {
+    color: #EE4C7C;
+    transition: color 0.5s ease;
+    cursor: pointer;
+}
+
+.home-btn {
+    
+}
+
+.heart-btn {
+    
+}
+
+.add-btn {
+ 
+}

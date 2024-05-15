@@ -1,0 +1,8 @@
+.playback {
+    /* position: absolute; */
+    margin: 0px 10px 0 85px;
+    height: 40px;
+    width: auto;
+    background-color: #151515;
+    color: white;
+}
