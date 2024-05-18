@@ -1,8 +1,17 @@
 .main-home {
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    right: 10px;
     background-color: #212121;
-    width: auto;
     height: 75vh;
-    margin: 0px 10px 0 85px;
     border-radius: 8px;
-    /* background-image: url('https://www.orangehead.net/wp-content/uploads/2017/06/upbeatfunretroff.jpg'); */
+    overflow: auto;
+    z-index: 2;
+}
+
+.main-home h1{
+    color: #C73659;
+    position: absolute;
+    margin-left: 20px;
 }

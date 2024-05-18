@@ -3,7 +3,6 @@ import './Sidebar.css';
 const Sidebar = () => {
     return (
         <div className="sidebar">
-            <h1 className='title'>Tempo</h1>
             <div className="icon-bar">
                 <i className="fa-solid fa-house home-btn"></i>
                 <i className="fa-solid fa-heart heart-btn"></i>

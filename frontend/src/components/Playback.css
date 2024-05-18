@@ -1,8 +1,16 @@
 .playback {
-    /* position: absolute; */
-    margin: 0px 10px 0 85px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: 40px;
     width: auto;
     background-color: #151515;
     color: white;
+}
+
+.playback h1 {
+    margin-top: auto;
+    margin-bottom: auto;
+    color: #C73659;
 }

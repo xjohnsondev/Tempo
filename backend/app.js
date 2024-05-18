@@ -1,9 +1,13 @@
+const Song = require("./models/song");
+
 const express = require("express");
 const cors = require("cors");
 
 const { NotFoundError } = require("./expressError");
 
-const { authenticateJWT } = require("./middleware/auth");
+// const { authenticateJWT } = require("./middleware/auth");
+
+const songsRoutes = require("./routes/songs");
 
 const morgan = require("morgan");
 
@@ -12,10 +16,19 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("tiny"));
-app.use(authenticateJWT);
+// app.use(authenticateJWT);
 
-app.get("/", (req, res) => {
-    res.json({ message: "Welcome to your Tempo application" });
+app.use("/songs", songsRoutes);
+
+
+app.get("/", async (req, res, next) => {
+  try {
+    const data = await Song.getAlbums();
+    return res.json({ data })
+    // res.json({ message: "Welcome to your Tempo application" });
+  } catch (e){
+    next(e);
+  }
   });
   
   /** Handle 404 errors -- this matches everything */

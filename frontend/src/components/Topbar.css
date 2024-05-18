@@ -1,4 +1,20 @@
 .topbar {
+    position: absolute;
+    top: 0;
     height: 80px;
     width: 100vw;
 }
+
+.title{
+    position: absolute;
+    left: 30px;
+    transform: translateY(-30%);
+    color: #EE4C7C;
+    font-family: 'Pricedown';
+    font-size: 250%;
+}
+
+@font-face {
+    font-family: 'Pricedown';
+    src: url('/Users/xjohnsondev/Documents/coding/Tempo/frontend/src/pricedown bl.otf');
+  }

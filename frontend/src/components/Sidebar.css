@@ -1,13 +1,9 @@
 .sidebar {
-    position: absolute;
+    position: relative;
     /* background-color: #191D88; */
-    height: 100vh;
+    height: calc(100vh - 80px);
     width: 80px;
-}
-
-.title{
-    margin-left: 20px;
-    color: #EE4C7C;
+    top: 80px;
 }
 
 .icon-bar {
@@ -17,7 +13,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #A91D3A;
     padding-bottom: 20px;
 }
