@@ -55,30 +55,18 @@ class Song {
         const artistResult = result.rows[0];
         if (!artistResult) throw new NotFoundError(`We don't have that artist's music`);
         return artistResult;
-    }
+    }    
 
-    /****
-    * Returns some unique albums for discover page
-    * 
-    * {album_name, artist, artwork_image}
-    ****/
-    static async getAlbums() {
+    static async getGenres() {
         const result = await db.query(
-            `SELECT DISTINCT *
-            FROM (
-                SELECT album_name, artist, artwork_image
+            `SELECT DISTINCT genre
                 FROM songs
-                ORDER BY RANDOM()
-                LIMIT 5
-            )`
-        );
-        const albums = result.rows;
-        if (albums.length === 0) throw new NotFoundError(`No albums found`);
-        return albums;
+            `
+        )
+        const genreResult = result.rows;
+        if (!genreResult) throw new NotFoundError(`No genres`);
+        return genreResult;
     }
 
-
-
-    
 }
 module.exports = Song;

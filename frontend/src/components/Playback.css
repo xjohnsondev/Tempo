@@ -1,9 +1,10 @@
 .playback {
     position: absolute;
-    bottom: 0;
+    margin-top: 0;
+    bottom: 25px;
     left: 0;
     right: 0;
-    height: 40px;
+    height: auto;
     width: auto;
     background-color: #151515;
     color: white;

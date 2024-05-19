@@ -26,12 +26,13 @@ class TempoApi {
     }
   }
 
-  /** Get all albums */
-  static async getAlbums() {
+  /** Get albums, genres for discover */
+  static async getDisc() {
     let res = await this.request(``);
     return res;
   }
 
+ 
 }
 
 export default TempoApi;

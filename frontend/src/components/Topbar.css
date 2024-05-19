@@ -1,17 +1,18 @@
 .topbar {
     position: absolute;
     top: 0;
-    height: 80px;
+    height: 40px;
     width: 100vw;
 }
 
 .title{
     position: absolute;
     left: 30px;
-    transform: translateY(-30%);
+    /* transform: translateY(-30%); */
+    margin-top: 8px;
     color: #EE4C7C;
     font-family: 'Pricedown';
-    font-size: 250%;
+    font-size: 225%;
 }
 
 @font-face {

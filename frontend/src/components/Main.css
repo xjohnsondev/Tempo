@@ -1,17 +1,46 @@
 .main-home {
     position: absolute;
-    top: 80px;
+    top: 60px;
     left: 80px;
     right: 10px;
     background-color: #212121;
-    height: 75vh;
+    bottom: 90px;
     border-radius: 8px;
-    overflow: auto;
+    overflow-y: auto;
+    scrollbar-color: #A91D3A #212121;
+    scrollbar-width: thin;
     z-index: 2;
 }
 
-.main-home h1{
+.main-home h1 {
     color: #C73659;
-    position: absolute;
+    position: relative;
+    margin-right: 85%;
+}
+
+.disc-list {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    /* margin-left: 0px; */
+
+}
+
+.disc-list li img {
+    border-radius: 8px;
+    height: 150px;
+    width: auto;
+    margin-right: 40px;
+    box-shadow: 
+        2px 0px 5px 0 #C73659,
+        1px 5px 5px 0 #41B6E6;
+}
+
+.disc-list li:first-child {
     margin-left: 20px;
+}
+
+.browse-div {
+    position: relative;
 }
