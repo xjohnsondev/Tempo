@@ -1,3 +1,5 @@
+\echo 'Delete and recreate tempo db?'
+
 DROP DATABASE tempo;
 CREATE DATABASE tempo ENCODING 'UTF8';
 \connect tempo

@@ -50,7 +50,10 @@ VALUES
     ('Favorites', 1),
     ('Workout Mix', 2),
     ('Chill Vibes', 1),
-    ('Road Trip', 3);
+    ('Road Trip', 3),
+    ('Party Hits', 1),
+    ('Relaxation', 1); 
+
 
 -- Seed data for playlist_songs table
 INSERT INTO playlist_songs (playlist_id, song_id)

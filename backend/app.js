@@ -1,5 +1,6 @@
 const Album = require("./models/album");
 const Song = require("./models/song");
+const Playlist = require("./models/playlist");
 
 const express = require("express");
 const cors = require("cors");
@@ -21,9 +22,11 @@ app.use(morgan("tiny"));
 
 const songsRoutes = require("./routes/songs");
 const albumsRoutes = require("./routes/albums");
+const playlistRoutes = require("./routes/playlists");
 
 app.use("/songs", songsRoutes);
-app.use("/album", albumsRoutes);
+app.use("/albums", albumsRoutes);
+app.use("/playlists", playlistRoutes);
 
 app.get("/", async (req, res, next) => {
   try {

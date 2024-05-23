@@ -11,19 +11,19 @@ class TempoApi {
   static token;
 
   static async request(endpoint, data = {}, method = "get") {
-    console.debug("API Call:", endpoint, data, method);
+      console.debug("API Call:", endpoint, data, method);
 
-    const url = `${BASE_URL}/${endpoint}`;
-    const headers = { Authorization: `Bearer ${TempoApi.token}` };
-    const params = method === "get" ? data : {};
+      const url = `${BASE_URL}/${endpoint}`;
+      const headers = { Authorization: `Bearer ${TempoApi.token}` };
+      const params = method === "get" ? data : {};
 
-    try {
-      return (await axios({ url, method, data, params, headers })).data;
-    } catch (err) {
-      console.error("API Error:", err.response);
-      let message = err.response.data.error.message;
-      throw Array.isArray(message) ? message : [message];
-    }
+      try {
+          return (await axios({ url, method, data, params, headers })).data;
+      } catch (err) {
+          console.error("API Error:", err.response);
+          let message = err.response.data.error.message;
+          throw Array.isArray(message) ? message : [message];
+      }
   }
 
   /** Get albums, genres for discover */
@@ -32,7 +32,11 @@ class TempoApi {
     return res;
   }
 
- 
+  static async getUserPlaylists(user_id) {
+      let res = await this.request(`playlists/user/${user_id}`);
+      return res;
+  }
 }
+
 
 export default TempoApi;

@@ -1,35 +1,100 @@
-.sidebar {
-    position: relative;
-    /* background-color: #191D88; */
-    height: calc(100vh - 80px);
+.sidebar-shell {
+    position: absolute;
+    /* background-color: #5a5a5b; */
     width: 80px;
     top: 60px;
+    bottom: 90px;
     z-index: 1;
 }
 
-.icon-bar {
+.sidebar {
     border-radius: 8px;
     width: 80%;
-    height: 200px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
     background-color: #A91D3A;
-    padding-bottom: 20px;
+}
+
+.icon-bar {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
 }
 
 .fa-solid {
     font-size: 180%;
     color: #EEEEEE;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .fa-solid:hover {
     color: #EE4C7C;
     transition: color 0.5s ease;
     cursor: pointer;
+}
+
+.sidebar-bottom {
+    list-style: none;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-color: #A91D3A #212121;
+    scrollbar-width: thin;
+    overflow-x: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sidebar-bottom::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.sidebar-bottom {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.sidebar-bottom .sideTile{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.sidebar-bottom .sideTile:first-child{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.sidebar-bottom .sideTile img {
+    position: relative;
+    height: 50px;
+    border-radius: 8px;
+}
+
+hr {
+    position: relative;
+    width: 100%;
+    background-color: #212121; 
+    height: 1px; 
+    border: 0;}
+
+@media (max-height: 350px) {
+    .sidebar {
+        display: none;
+    }
 }
 
 .home-btn {
@@ -42,4 +107,8 @@
 
 .add-btn {
  
+}
+
+.list-btn {
+
 }

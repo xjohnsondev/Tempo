@@ -8,6 +8,7 @@
     width: auto;
     background-color: #151515;
     color: white;
+    z-index: 3;
 }
 
 .playback h1 {
