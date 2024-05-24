@@ -1,4 +1,5 @@
 import './Sidebar.css';
+import musicCover from '../images/musicCover.jpeg'
 import TempoApi from '../api';
 import { useState, useEffect } from 'react';
 
@@ -33,7 +34,7 @@ const Sidebar = () => {
                     <ul className='sidebar-bottom'>
                         {sidePlaylists.map((tile) => (
                             <li key={tile.id} className='sideTile'>
-                                <img src='https://i.imgur.com/nszu54A.jpg'></img>
+                                <img src={musicCover}></img>
                                 
                             </li>
                         ))}

@@ -13,19 +13,18 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     margin-left: auto;
     margin-right: auto;
     background-color: #A91D3A;
+    /* padding-top: 20px; Ensure some space from the top */
+    box-sizing: border-box;
 }
 
 .icon-bar {
-    position: relative;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%; 
 }
 
 .fa-solid {
@@ -42,9 +41,10 @@
 
 .sidebar-bottom {
     list-style: none;
-    position: relative;
     padding: 0;
     margin: 0;
+    margin-top: 10px;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -64,51 +64,35 @@
     scrollbar-width: none;  /* Firefox */
 }
 
-.sidebar-bottom .sideTile{
+.sidebar-bottom .sideTile {
     margin-top: 10px;
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-.sidebar-bottom .sideTile:first-child{
-    margin-top: 5px;
+.sidebar-bottom .sideTile:first-child {
+    margin-top: 0px;
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
 .sidebar-bottom .sideTile img {
-    position: relative;
     height: 50px;
     border-radius: 8px;
 }
 
 hr {
-    position: relative;
-    width: 100%;
+    margin-top: 15px;
+    width: 90%;
     background-color: #212121; 
-    height: 1px; 
-    border: 0;}
+    height: 3px; 
+    border: 0;
+}
 
-@media (max-height: 350px) {
+@media (max-height: 320px) {
     .sidebar {
         display: none;
     }
-}
-
-.home-btn {
-    
-}
-
-.heart-btn {
-    
-}
-
-.add-btn {
- 
-}
-
-.list-btn {
-
 }

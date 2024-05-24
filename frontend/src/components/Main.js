@@ -1,4 +1,8 @@
 import './Main.css';
+import hiphopIcon from '../images/hiphopIcon.png'
+import rockIcon from '../images/rockIcon.png'
+import popIcon from '../images/popIcon.png'
+import electronicIcon from '../images/electronicIcon.png'
 import { useState, useEffect } from 'react';
 import TempoApi from '../api';
 import { v4 as uuidv4 } from "uuid";
@@ -7,6 +11,14 @@ import { v4 as uuidv4 } from "uuid";
 const Main = () => {
     const [showHome, setShowHome] = useState(false);
     const [discover, setDiscover] = useState({albumData : [], genreData : []});
+
+    // Mapping genre names to their corresponding icons
+    const genreIcons = {
+        'Hip Hop': hiphopIcon,
+        'Rock': rockIcon,
+        'Pop': popIcon,
+        'Electronic': electronicIcon
+    };
 
     useEffect(() => {
         async function homePage() {
@@ -36,9 +48,9 @@ const Main = () => {
             <div className='browse-div'>
                 <h1>Browse</h1>
                 <ul className='disc-list'>
-                    {discover.genreData.map((tile) => (
+                {Object.entries(genreIcons).map(([genre, icon]) => (
                         <li key={uuidv4()}>
-                            <p>{tile.genre}</p>
+                            <img src={icon} alt={`${genre} icon`} />
                         </li>
                     ))}
                 </ul>

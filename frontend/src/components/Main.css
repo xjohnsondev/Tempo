@@ -30,11 +30,9 @@
 .disc-list li img {
     border-radius: 8px;
     height: 150px;
-    width: auto;
+    width: 155px;
     margin-right: 40px;
-    box-shadow: 
-        2px 0px 5px 0 #C73659,
-        1px 5px 5px 0 #41B6E6;
+  
 }
 
 .disc-list li:first-child {
@@ -42,5 +40,5 @@
 }
 
 .browse-div {
-    position: relative;
+    /* position: relative; */
 }
