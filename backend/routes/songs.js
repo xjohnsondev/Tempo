@@ -70,6 +70,33 @@ router.get("/:song", async function (req, res, next) {
     }
   });
 
+  /** 
+ * GET /genre/:genre
+ * 
+ * Retrieves information about songs of a specific genre.
+ * 
+ * Parameters:
+ *  - :genre: The genre of the songs to retrieve.
+ * 
+ * Returns:
+ *  - JSON object containing an array of songs of the requested genre.
+ * 
+ * Error Handling:
+ *  - If an error occurs during the retrieval of the songs, 
+ * it forwards the error to the error handling middleware.
+ */
+router.get("/genre/:genre", async function (req, res, next) {
+  try {
+    const genreParam = decodeURIComponent(req.params.genre);
+    const genre = genreParam.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    const songs = await Song.getSongsByGenre(genre);
+    return res.json({ songs });
+  } catch (e) {
+    return next(e);
+  }
+});
+
+
 
 
 module.exports = router;

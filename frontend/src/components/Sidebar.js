@@ -3,7 +3,7 @@ import musicCover from '../images/musicCover.jpeg'
 import TempoApi from '../api';
 import { useState, useEffect } from 'react';
 
-const Sidebar = () => {
+const Sidebar = ({homeClick}) => {
     const [sidePlaylists, setSidePlaylists] = useState([]);
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const Sidebar = () => {
         <div className="sidebar-shell">
             <div className='sidebar'>
                 <div className="icon-bar">
-                    <i className="fa-solid fa-house home-btn"></i>
+                <i className="fa-solid fa-house home-btn" onClick={homeClick}></i>
                     <i className="fa-solid fa-heart heart-btn"></i>
                     <i className="fa-solid fa-circle-plus add-btn"></i>
                     <i className="fa-solid fa-bars list-btn"></i>

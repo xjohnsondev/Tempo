@@ -36,6 +36,12 @@ class TempoApi {
       let res = await this.request(`playlists/user/${user_id}`);
       return res;
   }
+
+  static async getSongsByGenre(genre) {
+    let res = await this.request(`songs/genre/${genre}`);
+    return res;
+  }
+
 }
 
 

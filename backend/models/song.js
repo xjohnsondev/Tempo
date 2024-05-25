@@ -57,6 +57,12 @@ class Song {
         return artistResult;
     }    
 
+     /***
+     * Returns all distinct genres available in the database
+     * 
+     * Returns an array of strings representing distinct genres.
+     * Throws a NotFoundError if no genres are found.
+     ***/
     static async getGenres() {
         const result = await db.query(
             `SELECT DISTINCT genre
@@ -66,6 +72,25 @@ class Song {
         const genreResult = result.rows;
         if (!genreResult) throw new NotFoundError(`No genres`);
         return genreResult;
+    }
+
+     /***
+     * Returns all songs belonging to the specified genre
+     * 
+     * @param {string} genre - The genre for which to retrieve songs
+     * Returns an array of song objects matching the specified genre.
+     * Throws a NotFoundError if no songs are found in the specified genre.
+     ***/
+    static async getSongsByGenre(genre) {
+        const result = await db.query(
+            `SELECT *
+            FROM songs
+            WHERE genre = $1`,
+            [genre]
+        )
+        const genreSongs = result.rows;
+        if (!genreSongs) throw new NotFoundError(`No songs in this genre`);
+        return genreSongs;
     }
 
 }

@@ -23,8 +23,6 @@
     list-style: none;
     display: flex;
     flex-direction: row;
-    /* margin-left: 0px; */
-
 }
 
 .disc-list li img {
@@ -35,10 +33,20 @@
   
 }
 
+.disc-list li img:hover {
+    cursor: pointer;
+}
+
 .disc-list li:first-child {
     margin-left: 20px;
 }
 
-.browse-div {
-    /* position: relative; */
+.genre-label {
+    color: #C73659;
+    font-weight: 600;
+    transform: translate(-10%, -8px);
+}
+
+.genre-label:hover {
+    cursor: pointer;
 }
