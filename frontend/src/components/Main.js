@@ -5,11 +5,13 @@ import popIcon from '../images/popIcon.png'
 import electronicIcon from '../images/electronicIcon.png'
 import { useState, useEffect } from 'react';
 import TempoApi from '../api';
+import TrackList from './TrackList';
 import { v4 as uuidv4 } from "uuid";
 
 
 const Main = ({ handleSectionChange, activeSection }) => {
     const [discover, setDiscover] = useState({ albumData: [], genreData: [] });
+    const [songs, setSongs] = useState([]);
 
     // Mapping genre names to their corresponding icons
     const genreIcons = {
@@ -27,6 +29,13 @@ const Main = ({ handleSectionChange, activeSection }) => {
         }
         homePage();
     }, []);
+
+    async function handleGenreClick(genre) {
+        const result = await TempoApi.getSongsByGenre(genre);
+        console.log(result);
+        setSongs(result);
+        handleSectionChange('trackList');
+    };
 
     if (!discover) {
         return <div>Loading...</div>;
@@ -51,7 +60,8 @@ const Main = ({ handleSectionChange, activeSection }) => {
                         <ul className='disc-list'>
                             {Object.entries(genreIcons).map(([genre, icon]) => (
                                 <li className="browse-list" key={uuidv4()}
-                                onClick={() => TempoApi.getSongsByGenre(genre).then((result) => console.log(result))}>
+                                    onClick={() => handleGenreClick(genre)}
+                                        >
                                     <img src={icon} alt={`${genre} icon`} />
                                     <p className='genre-label'>{genre}</p>
                                 </li>
@@ -60,6 +70,7 @@ const Main = ({ handleSectionChange, activeSection }) => {
                     </div>
                 </div>
             )}
+            {activeSection === 'trackList' && <TrackList songs={songs.songs} />}
 
 
         </div>

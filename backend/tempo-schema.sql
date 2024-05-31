@@ -19,6 +19,7 @@ CREATE TABLE songs (
     song_name VARCHAR(100) NOT NULL,
     artist VARCHAR(100) NOT NULL,
     album_id INT NOT NULL REFERENCES albums(album_id) ON DELETE CASCADE,
+    album_name VARCHAR(255) NOT NULL,
     genre VARCHAR(255) NOT NULL,
     file_path VARCHAR(255) NOT NULL,
     number_of_plays INT NOT NULL DEFAULT 0,

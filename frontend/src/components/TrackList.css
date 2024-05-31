@@ -1,0 +1,93 @@
+.main-home {
+    position: absolute;
+    top: 60px;
+    left: 80px;
+    right: 10px;
+    background-color: #212121;
+    bottom: 90px;
+    border-radius: 8px;
+    overflow-y: auto;
+    scrollbar-color: #A91D3A #212121;
+    scrollbar-width: thin;
+    z-index: 2;
+}
+
+.tracklist-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 10px;
+    border-bottom: 2px solid #333;
+    color: #C73659;
+    font-weight: 500;
+}
+
+.header-title {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.header-plays,
+.header-length {
+    text-align: right;
+}
+
+.header-length {
+    margin-right: 12px;
+}
+
+.header-plays {
+    margin-left: 100px;
+}
+
+.tracklist {
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+}
+
+.listing {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.song-details {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.song-details h4 {
+    color: #C73659;
+    font-weight: 500;
+    margin: 0;
+}
+
+.tl-artist {
+    color: #C73659;
+    font-size: 12px;
+    margin: 0;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    text-overflow: ellipsis;
+}
+
+.tl-plays,
+.tl-length {
+    color: #C73659;
+    margin: 0;
+    text-align: right;
+}
+
+.tl-length {
+    margin-right: 10px;
+}
+
+.explicit-tag {
+    height: 12px;
+    margin-right: 5px;
+    margin-top: 1px;
+}

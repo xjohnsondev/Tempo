@@ -7,14 +7,17 @@ import Playback from './components/Playback';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
+  const [data, setData] = useState([]);
 
-  const handleSectionChange = (section) => {
+
+  const handleSectionChange = (section, data = []) => {
     setActiveSection(section);
+    setData(data);
   };
 
   return (
     <div className="App">
-      <Sidebar handleSectionChange={handleSectionChange} activeSection={activeSection} />
+      <Sidebar homeClick={() => handleSectionChange('home')} />
       <Topbar />
       <Main activeSection={activeSection} handleSectionChange={handleSectionChange}/>
       <Playback />

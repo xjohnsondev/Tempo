@@ -6,11 +6,14 @@
     background-color: #212121;
     bottom: 90px;
     border-radius: 8px;
-    overflow-y: auto;
-    scrollbar-color: #A91D3A #212121;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    scrollbar-color: #A91D3A transparent !important;
     scrollbar-width: thin;
     z-index: 2;
 }
+
+
 
 .main-home h1 {
     color: #C73659;
