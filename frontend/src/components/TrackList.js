@@ -13,6 +13,15 @@ const TrackList = ({ songs }) => {
         // Format as m:ss or mm:ss
         return `${minutesInt}:${secondsInt.toString().padStart(2, '0')}`;
     };
+
+    if (!songs || songs.length === 0) {
+        return (
+            <div>
+                <p style={{color: 'red'}}>No songs</p>
+            </div>
+        );
+    }
+
     return (
         <div>
             {console.table(songs)}
