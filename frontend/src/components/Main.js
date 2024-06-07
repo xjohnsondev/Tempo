@@ -1,12 +1,10 @@
 import './Main.css';
-import hiphopIcon from '../images/hiphopIcon.png'
-import rockIcon from '../images/rockIcon.png'
-import popIcon from '../images/popIcon.png'
-import electronicIcon from '../images/electronicIcon.png'
+
 import { useState, useEffect } from 'react';
 import TempoApi from '../api';
 import TrackList from './TrackList';
 import { v4 as uuidv4 } from "uuid";
+
 
 
 const Main = ({ handleSectionChange, activeSection }) => {
@@ -14,12 +12,12 @@ const Main = ({ handleSectionChange, activeSection }) => {
     const [songs, setSongs] = useState([]);
 
     // Mapping genre names to their corresponding icons
-    const genreIcons = {
-        'Hip Hop': hiphopIcon,
-        'Rock': rockIcon,
-        'Pop': popIcon,
-        'Electronic': electronicIcon
-    };
+    // const genreIcons = {
+    //     'Hip Hop': hiphopIcon,
+    //     'Rock': rockIcon,
+    //     'Pop': popIcon,
+    //     'Electronic': electronicIcon
+    // };
 
     useEffect(() => {
         async function homePage() {
@@ -58,12 +56,14 @@ const Main = ({ handleSectionChange, activeSection }) => {
                     <div className='browse-div'>
                         <h1>Browse</h1>
                         <ul className='disc-list'>
-                            {Object.entries(genreIcons).map(([genre, icon]) => (
+                            {discover.genreData.map((genre) => (
                                 <li className="browse-list" key={uuidv4()}
-                                    onClick={() => handleGenreClick(genre)}
-                                        >
-                                    <img src={icon} alt={`${genre} icon`} />
-                                    <p className='genre-label'>{genre}</p>
+                                    onClick={() => handleGenreClick(genre.genre)}
+                                >
+                                    <div className="genre-container">
+                                        <img src={`/images/${genre.genre}Icon.png`} alt={`${genre.genre} icon`} />
+                                        <p className='genre-label'>{genre.genre}</p>
+                                    </div>
                                 </li>
                             ))}
                         </ul>

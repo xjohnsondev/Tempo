@@ -47,8 +47,10 @@
 .genre-label {
     color: #C73659;
     font-weight: 600;
-    transform: translate(-10%, -8px);
+    transform: translate(-20px, -10px);
+   
 }
+
 
 .genre-label:hover {
     cursor: pointer;

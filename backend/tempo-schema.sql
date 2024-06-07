@@ -7,19 +7,25 @@ CREATE TABLE users (
     is_admin BOOLEAN NOT NULL DEFAULT FALSE
 );
 
+CREATE TABLE artists (
+    artist_id SERIAL PRIMARY KEY,
+    artist_name VARCHAR(100) UNIQUE NOT NULL,
+    bio TEXT,
+    profile_picture VARCHAR(255)
+);
+
 CREATE TABLE albums (
     album_id SERIAL PRIMARY KEY,
     album_name VARCHAR(100) NOT NULL,
-    artist VARCHAR(100) NOT NULL,
+    artist_id INT NOT NULL REFERENCES artists(artist_id) ON DELETE CASCADE,
     artwork_image VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE songs (
     song_id SERIAL PRIMARY KEY,
     song_name VARCHAR(100) NOT NULL,
-    artist VARCHAR(100) NOT NULL,
+    artist_id INT NOT NULL REFERENCES artists(artist_id) ON DELETE CASCADE,
     album_id INT NOT NULL REFERENCES albums(album_id) ON DELETE CASCADE,
-    album_name VARCHAR(255) NOT NULL,
     genre VARCHAR(255) NOT NULL,
     file_path VARCHAR(255) NOT NULL,
     number_of_plays INT NOT NULL DEFAULT 0,

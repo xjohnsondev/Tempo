@@ -1,7 +1,8 @@
 import './Sidebar.css';
-import musicCover from '../images/musicCover.jpeg'
 import TempoApi from '../api';
 import { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from "uuid";
+
 
 const Sidebar = ({homeClick}) => {
     const [sidePlaylists, setSidePlaylists] = useState([]);
@@ -19,8 +20,6 @@ const Sidebar = ({homeClick}) => {
         getUserPlaylists();
     }, []);
 
-
-
     return (
         <div className="sidebar-shell">
             <div className='sidebar'>
@@ -33,8 +32,8 @@ const Sidebar = ({homeClick}) => {
                 <hr></hr>
                     <ul className='sidebar-bottom'>
                         {sidePlaylists.map((tile) => (
-                            <li key={tile.id} className='sideTile'>
-                                <img src={musicCover}></img>
+                            <li key={uuidv4()} className='sideTile' >
+                                <img src='/images/musicCover.jpeg'></img>
                                 
                             </li>
                         ))}

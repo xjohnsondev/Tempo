@@ -1,18 +1,26 @@
 import './Playback.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { useState } from 'react';
 
 const Playback = () => {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const togglePlay = () => {
+        setIsPlaying(!isPlaying);
+    };
     return (
         <div className="playback">
-            {/* <i class="fa-solid fa-pause"></i>  */}
-            <i className="fa-solid fa-backward-step pb back"></i>
-            <i className="fa-solid fa-play pb play"></i>    
-            <i className="fa-solid fa-forward-step pb forward"></i>
-   
-            <i class="fa-solid fa-shuffle pb shuffle"></i>
-
+            <div className="icon-container">
+                <i className="fa-solid fa-repeat pb repeat"></i>
+                <i className="fa-solid fa-backward-step pb back"></i>
+                {isPlaying ? (
+                    <i className="fa-solid fa-play pb play" onClick={() => togglePlay()}></i>
+                ) : (
+                    <i className="fa-solid fa-pause pb pause" onClick={() => togglePlay()}></i>
+                )}
+                <i className="fa-solid fa-forward-step pb forward"></i>
+                <i className="fa-solid fa-shuffle pb shuffle"></i>
             </div>
+        </div>
     );
 }
 

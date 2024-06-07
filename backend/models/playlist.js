@@ -18,7 +18,7 @@ class Playlist {
                     JSON_BUILD_OBJECT(
                         'song_id', s.song_id,
                         'song_name', s.song_name,
-                        'artist', s.artist
+                        'artist', s.artist_id
                     )
                 ) AS songs
             FROM 

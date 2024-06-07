@@ -1,5 +1,4 @@
 import './TrackList.css';
-import explicitTag from '../images/explicit.png';
 
 const TrackList = ({ songs }) => {
     const formatTrackLength = (length) => {
@@ -36,7 +35,7 @@ const TrackList = ({ songs }) => {
                         <div className='song-details'>
                             <h4>{song.song_name}</h4>
                             <span className='tl-artist'>
-                                {song.is_explicit && <img src={explicitTag} className='explicit-tag' alt="explicit"></img>}
+                                {song.is_explicit && <img src='/images/explicit.png' className='explicit-tag' alt="explicit"></img>}
                                 {song.artist}
                             </span>
                         </div>

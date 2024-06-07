@@ -65,8 +65,12 @@ class Song {
      ***/
     static async getGenres() {
         const result = await db.query(
-            `SELECT DISTINCT genre
-                FROM songs
+            `SELECT genre
+            FROM (
+              SELECT DISTINCT genre
+              FROM songs
+            ) AS distinct_genres
+            ORDER BY RANDOM();
             `
         )
         const genreResult = result.rows;
