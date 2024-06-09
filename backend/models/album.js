@@ -20,6 +20,19 @@ class Album {
         const albums = result.rows;
         if (albums.length === 0) throw new NotFoundError(`No albums found`);
         return albums;
-    }    
+    }
+
+    static async getAlbumArt(album_id) {
+        const result = await db.query(
+            `SELECT artwork_image
+            FROM albums
+            WHERE album_id = $1`,
+            [album_id]
+        );
+        const cover = result.rows[0];
+        if (cover.length === 0) throw new NotFoundError(`Could not retrieve artwork`);
+        return cover;
+    }
+
 }
 module.exports = Album;

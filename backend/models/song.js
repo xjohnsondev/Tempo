@@ -87,15 +87,48 @@ class Song {
      ***/
     static async getSongsByGenre(genre) {
         const result = await db.query(
-            `SELECT *
-            FROM songs
-            WHERE genre = $1`,
+            `SELECT 
+                s.*,
+                a.artwork_image
+            FROM 
+                songs AS s
+            JOIN 
+                albums AS a ON s.album_id = a.album_id
+            WHERE 
+                s.genre = $1`,
             [genre]
-        )
+        );
         const genreSongs = result.rows;
         if (!genreSongs) throw new NotFoundError(`No songs in this genre`);
         return genreSongs;
     }
-
+    
+/**
+ * Returns all songs belonging to the specified album.
+ * 
+ * @param {number} album_id - The ID of the album for which to retrieve songs.
+ * @returns {Array} - An array of song objects from the specified album.
+ * @throws {NotFoundError} - Throws a NotFoundError if no songs are found in the specified album.
+ */
+    static async getSongsByAlbum(album_id) {
+        const result = await db.query(
+            `SELECT 
+                s.*,
+                al.artwork_image,
+                ar.artist_name
+            FROM 
+                songs AS s
+            JOIN 
+                albums AS al ON s.album_id = al.album_id
+            JOIN
+                artists AS ar ON s.artist_id = ar.artist_id
+            WHERE 
+                s.album_id = $1`,
+            [album_id]
+        );
+        const data = result.rows;
+        if (data.length === 0) throw new NotFoundError('No songs found');
+        return data;
+    }
 }
 module.exports = Song;

@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 /** 
- * GET /
+ * GET /songs
  * 
  * Retrieves information about all songs.
  * 
@@ -24,7 +24,7 @@ router.get("/", async function (req, res, next) {
 
 
 /** 
- * GET /:song
+ * GET /songs/:song
  * 
  * Retrieves information about a specific song.
  * 
@@ -47,7 +47,7 @@ router.get("/:song", async function (req, res, next) {
   });
 
 /** 
- * GET /artist/:artist
+ * GET /songs/artist/:artist
  * 
  * Retrieves songs by a specific artist.
  * 
@@ -71,7 +71,7 @@ router.get("/:song", async function (req, res, next) {
   });
 
   /** 
- * GET /genre/:genre
+ * GET /songs/genre/:genre
  * 
  * Retrieves information about songs of a specific genre.
  * 
@@ -95,6 +95,31 @@ router.get("/genre/:genre", async function (req, res, next) {
     return next(e);
   }
 });
+
+/**
+ * GET /songs/album/:album_id
+ * 
+ * Retrieves information about songs in a specific album.
+ * 
+ * Parameters:
+ *  - :album_id: The ID of the album whose songs are to be retrieved.
+ * 
+ * Returns:
+ *  - JSON object containing an array of songs from the requested album.
+ * 
+ * Error Handling:
+ *  - If an error occurs during the retrieval of the songs,
+ *    it forwards the error to the error handling middleware.
+ */
+router.get("/album/:album_id", async function (req, res, next) {
+  try{
+    const id = req.params.album_id;
+    const songs = await Song.getSongsByAlbum(id);
+    return res.json({ songs });
+  } catch (e) {
+    return next(e);
+  }
+})
 
 
 

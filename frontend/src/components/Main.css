@@ -13,12 +13,11 @@
     z-index: 2;
 }
 
-
-
 .main-home h1 {
     color: #C73659;
     position: relative;
-    margin-right: 85%;
+    margin-left: 50px;
+    text-align: left;
 }
 
 .disc-list {
@@ -54,4 +53,10 @@
 
 .genre-label:hover {
     cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

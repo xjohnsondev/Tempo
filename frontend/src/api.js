@@ -26,22 +26,59 @@ class TempoApi {
       }
   }
 
-  /** Get albums, genres for discover */
+  /**
+   * Get albums and genres for discovery.
+   * 
+   * @returns {object} - The data returned from the API.
+   */
   static async getDisc() {
     let res = await this.request(``);
     return res;
   }
 
+  /**
+   * Get playlists for a specific user.
+   * 
+   * @param {string} user_id - The ID of the user.
+   * @returns {object} - The data returned from the API.
+   */
   static async getUserPlaylists(user_id) {
-      let res = await this.request(`playlists/user/${user_id}`);
-      return res;
+    let res = await this.request(`playlists/user/${user_id}`);
+    return res;
   }
 
+  /**
+   * Get songs by a specific genre.
+   * 
+   * @param {string} genre - The genre to filter songs by.
+   * @returns {object} - The data returned from the API.
+   */
   static async getSongsByGenre(genre) {
     let res = await this.request(`songs/genre/${genre}`);
     return res;
   }
 
+  /**
+   * Get songs from a specific album.
+   * 
+   * @param {string} album_id - The ID of the album.
+   * @returns {object} - The data returned from the API.
+   */
+  static async getSongsByAlbum(album_id) {
+    let res = await this.request(`songs/album/${album_id}`);
+    return res;
+  }
+
+  /**
+   * Get cover art for a specific album.
+   * 
+   * @param {string} album_id - The ID of the album.
+   * @returns {object} - The data returned from the API.
+   */
+  static async getAlbumArt(album_id) {
+    let res = await this.request(`albums/cover/${album_id}`);
+    return res;
+  }
 }
 
 

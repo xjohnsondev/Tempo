@@ -1,4 +1,6 @@
+import TempoApi from '../api';
 import './TrackList.css';
+
 
 const TrackList = ({ songs }) => {
     const formatTrackLength = (length) => {
@@ -16,7 +18,7 @@ const TrackList = ({ songs }) => {
     if (!songs || songs.length === 0) {
         return (
             <div>
-                <p style={{color: 'red'}}>No songs</p>
+                <p style={{ color: 'red' }}>No songs</p>
             </div>
         );
     }
@@ -29,14 +31,19 @@ const TrackList = ({ songs }) => {
                 <div className='header-plays'>Plays</div>
                 <div className='header-length'>Length</div>
             </div>
+            
             <ul className='tracklist'>
                 {songs.map((song) => (
                     <li className='listing' key={song.song_id}>
+                        <img className="listing-art" src={song.artwork_image} alt='Album Art' />
                         <div className='song-details'>
-                            <h4>{song.song_name}</h4>
-                            <span className='tl-artist'>
+                            <h4>
+                                {song.song_name}
                                 {song.is_explicit && <img src='/images/explicit.png' className='explicit-tag' alt="explicit"></img>}
-                                {song.artist}
+                            </h4>
+
+                            <span className='tl-artist'>
+                                {song.artist_name}
                             </span>
                         </div>
                         <p className='tl-plays'>{song.number_of_plays}</p>

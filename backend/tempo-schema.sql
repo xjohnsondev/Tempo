@@ -9,9 +9,7 @@ CREATE TABLE users (
 
 CREATE TABLE artists (
     artist_id SERIAL PRIMARY KEY,
-    artist_name VARCHAR(100) UNIQUE NOT NULL,
-    bio TEXT,
-    profile_picture VARCHAR(255)
+    artist_name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE albums (
@@ -30,8 +28,11 @@ CREATE TABLE songs (
     file_path VARCHAR(255) NOT NULL,
     number_of_plays INT NOT NULL DEFAULT 0,
     track_length TIME NOT NULL,
-    is_explicit BOOLEAN NOT NULL DEFAULT FALSE
+    is_explicit BOOLEAN NOT NULL DEFAULT FALSE,
+    FOREIGN KEY (album_id) REFERENCES albums(album_id),
+    FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 );
+
 
 CREATE TABLE playlists (
     playlist_id SERIAL PRIMARY KEY,
