@@ -3,8 +3,8 @@
     top: 60px;
     left: 80px;
     right: 10px;
+    bottom: 105px !important;
     background-color: #212121;
-    bottom: 90px;
     border-radius: 8px;
     overflow-y: hidden;
     overflow-x: hidden;

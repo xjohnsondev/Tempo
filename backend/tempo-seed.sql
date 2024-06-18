@@ -31,7 +31,7 @@ VALUES
 INSERT INTO songs (song_name, artist_id, album_id, genre, file_path, track_length, is_explicit)
 VALUES
     -- Songs from "Bad"
-    ('Bad', 1, 1, 'Pop', 'path/to/bad.mp3', '00:04:07', FALSE),
+    ('Bad', 1, 1, 'Pop', 'path/to/bad.mp3', '00e:04:07', FALSE),
     ('The Way You Make Me Feel', 1, 1, 'Pop', 'path/to/thewayyoumakemefeel.mp3', '00:04:58', FALSE),
     ('Speed Demon', 1, 1, 'Pop', 'path/to/speeddemon.mp3', '00:04:02', FALSE),
     ('Liberian Girl', 1, 1, 'Pop', 'path/to/liberiangirl.mp3', '00:03:53', FALSE),

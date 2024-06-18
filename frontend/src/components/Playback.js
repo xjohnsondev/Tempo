@@ -1,27 +1,35 @@
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 import './Playback.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const Playback = () => {
-    const [isPlaying, setIsPlaying] = useState(false);
-    const togglePlay = () => {
-        setIsPlaying(!isPlaying);
-    };
-    return (
-        <div className="playback">
-            <div className="icon-container">
-                <i className="fa-solid fa-repeat pb repeat"></i>
-                <i className="fa-solid fa-backward-step pb back"></i>
-                {isPlaying ? (
-                    <i className="fa-solid fa-play pb play" onClick={() => togglePlay()}></i>
-                ) : (
-                    <i className="fa-solid fa-pause pb pause" onClick={() => togglePlay()}></i>
-                )}
-                <i className="fa-solid fa-forward-step pb forward"></i>
-                <i className="fa-solid fa-shuffle pb shuffle"></i>
-            </div>
-        </div>
-    );
+  const [isPlaying, setIsPlaying] = useState(false);
+  const playerRef = useRef();
+
+  const togglePlay = () => {
+    if (isPlaying) {
+      playerRef.current.audio.current.pause();
+    } else {
+      playerRef.current.audio.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  return (
+    <div className="playback">
+      <AudioPlayer
+        // className='audio-player'
+        src="http://localhost:3001/music/Bad/01 - Bad.mp3"  // Replace with the dynamic URL as needed
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        ref={playerRef}
+      />
+      {/* <button onClick={togglePlay}>
+        {isPlaying ? 'Pause' : 'Play'}
+      </button> */}
+    </div>
+  );
 }
 
 export default Playback;

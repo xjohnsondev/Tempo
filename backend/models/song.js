@@ -83,23 +83,30 @@ class Song {
      * 
      * @param {string} genre - The genre for which to retrieve songs
      * Returns an array of song objects matching the specified genre.
+     * Ordered by song name.
      * Throws a NotFoundError if no songs are found in the specified genre.
      ***/
     static async getSongsByGenre(genre) {
         const result = await db.query(
             `SELECT 
                 s.*,
-                a.artwork_image
+                al.artwork_image,
+                al.album_name,
+                ar.artist_name
             FROM 
                 songs AS s
             JOIN 
-                albums AS a ON s.album_id = a.album_id
-            WHERE 
-                s.genre = $1`,
+                albums AS al ON s.album_id = al.album_id
+            JOIN 
+                artists AS ar ON s.artist_id = ar.artist_id           
+             WHERE 
+                s.genre = $1
+            ORDER BY s.song_name ASC`,
             [genre]
         );
         const genreSongs = result.rows;
         if (!genreSongs) throw new NotFoundError(`No songs in this genre`);
+        
         return genreSongs;
     }
     
@@ -115,6 +122,7 @@ class Song {
             `SELECT 
                 s.*,
                 al.artwork_image,
+                al.album_name,
                 ar.artist_name
             FROM 
                 songs AS s
