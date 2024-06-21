@@ -8,7 +8,12 @@ import Playback from './components/Playback';
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [data, setData] = useState([]);
+  const [selectedSong, setSelectedSong] = useState(null);
 
+  const handleSongSelect = (song) => {
+      setSelectedSong(song);
+      console.log(song);
+  };
 
   const handleSectionChange = (section, data = []) => {
     setActiveSection(section);
@@ -19,8 +24,8 @@ function App() {
     <div className="App">
       <Sidebar homeClick={() => handleSectionChange('home')} />
       <Topbar />
-      <Main activeSection={activeSection} handleSectionChange={handleSectionChange}/>
-      <Playback />
+      <Main activeSection={activeSection} handleSectionChange={handleSectionChange} handleSongSelect={handleSongSelect} setSelectedSong={setSelectedSong}/>
+      <Playback selectedSong={selectedSong} />
     </div>
   );
 }

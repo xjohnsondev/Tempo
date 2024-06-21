@@ -1,35 +1,54 @@
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import './Playback.css';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
-const Playback = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const playerRef = useRef();
+const Playback = ({ selectedSong }) => {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [songRoute, setSongRoute] = useState(selectedSong && selectedSong.file_path ? selectedSong.file_path : null);
+    const playerRef = useRef();
 
-  const togglePlay = () => {
-    if (isPlaying) {
-      playerRef.current.audio.current.pause();
-    } else {
-      playerRef.current.audio.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
+    /**
+    * Function to load and play the selected song when `selectedSong` changes.
+    */
+    useEffect(() => {
+        const loadSong = () => {
+            if (playerRef.current && playerRef.current.audio && selectedSong) {
+                // Setting the audio source dynamically based on selectedSong's file_path.
+                playerRef.current.audio.current.src = `http://localhost:3001/music/${selectedSong.file_path}`;
+                playerRef.current.audio.current.load();
+                setIsPlaying(true);
+            }
+        };
+        loadSong();
+    }, [selectedSong]);
 
-  return (
-    <div className="playback">
-      <AudioPlayer
-        // className='audio-player'
-        src="http://localhost:3001/music/Bad/01 - Bad.mp3"  // Replace with the dynamic URL as needed
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
-        ref={playerRef}
-      />
-      {/* <button onClick={togglePlay}>
-        {isPlaying ? 'Pause' : 'Play'}
-      </button> */}
-    </div>
-  );
+    /**
+    * Function to toggle play/pause state of the audio.
+    */
+    const togglePlay = () => {
+        if (isPlaying) {
+            playerRef.current.audio.current.pause();
+        } else {
+            playerRef.current.audio.current.play();
+        }
+        setIsPlaying(!isPlaying);
+    };
+
+    return (
+        <div className="playback">
+            <AudioPlayer
+                showDownloadProgress={false}
+                autoPlay
+                showSkipControls
+                showJumpControls={false}
+                src=""
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                ref={playerRef}
+            />
+        </div>
+    );
 }
 
 export default Playback;

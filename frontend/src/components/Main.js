@@ -1,15 +1,17 @@
 import './Main.css';
-
 import { useState, useEffect } from 'react';
 import TempoApi from '../api';
 import TrackList from './TrackList';
 import { v4 as uuidv4 } from "uuid";
 
 
-const Main = ({ handleSectionChange, activeSection }) => {
+const Main = ({ handleSectionChange, activeSection, handleSongSelect }) => {
     const [discover, setDiscover] = useState({ albumData: [], genreData: [] });
     const [songs, setSongs] = useState([]);
 
+    /**
+    * Function to fetch initial discover data from the API.
+    */
     useEffect(() => {
         async function homePage() {
             const result = await TempoApi.getDisc();
@@ -19,6 +21,9 @@ const Main = ({ handleSectionChange, activeSection }) => {
         homePage();
     }, []);
 
+    /**
+     * Function to handle genre click and fetch songs by genre.
+     */
     async function handleGenreClick(genre) {
         const result = await TempoApi.getSongsByGenre(genre);
         console.log(result);
@@ -26,9 +31,11 @@ const Main = ({ handleSectionChange, activeSection }) => {
         handleSectionChange('trackList');
     };
 
+    /**
+     * Function to handle album click and fetch songs by album ID.
+     */
     async function handleAlbumClick(album_id) {
         const result = await TempoApi.getSongsByAlbum(album_id);
-        // console.log(result);
         setSongs(result);
         handleSectionChange('trackList');
     }
@@ -70,8 +77,8 @@ const Main = ({ handleSectionChange, activeSection }) => {
 
                 </div>
             )}
-            {activeSection === 'trackList' && <TrackList songs={songs.songs} />}
-            
+            {activeSection === 'trackList' && <TrackList songs={songs.songs} handleSongSelect={handleSongSelect} />}
+
 
         </div>
     );

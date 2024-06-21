@@ -18,6 +18,10 @@
     border-radius: 8px;
 }
 
+.listing-art:hover {
+    cursor: pointer;
+}
+
 .tracklist-header {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;

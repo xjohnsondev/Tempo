@@ -1,6 +1,6 @@
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
-    username VARCHAR(20) UNIQUE NOT NULL,
+    username VARCHAR(30) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     profile_picture VARCHAR(255),
@@ -9,8 +9,11 @@ CREATE TABLE users (
 
 CREATE TABLE artists (
     artist_id SERIAL PRIMARY KEY,
-    artist_name VARCHAR(100) NOT NULL
+    artist_name VARCHAR(100) NOT NULL,
+    bio VARCHAR(500),
+    profile_picture VARCHAR(255) NOT NULL
 );
+
 
 CREATE TABLE albums (
     album_id SERIAL PRIMARY KEY,
@@ -18,6 +21,7 @@ CREATE TABLE albums (
     artist_id INT NOT NULL REFERENCES artists(artist_id) ON DELETE CASCADE,
     artwork_image VARCHAR(255) NOT NULL
 );
+
 
 CREATE TABLE songs (
     song_id SERIAL PRIMARY KEY,
@@ -29,8 +33,8 @@ CREATE TABLE songs (
     number_of_plays INT NOT NULL DEFAULT 0,
     track_length TIME NOT NULL,
     is_explicit BOOLEAN NOT NULL DEFAULT FALSE,
-    FOREIGN KEY (album_id) REFERENCES albums(album_id),
-    FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
+    FOREIGN KEY (artist_id) REFERENCES artists(artist_id),
+    FOREIGN KEY (album_id) REFERENCES albums(album_id)
 );
 
 
@@ -40,8 +44,10 @@ CREATE TABLE playlists (
     user_id INT NOT NULL REFERENCES users(user_id) ON DELETE CASCADE
 );
 
+
 CREATE TABLE playlist_songs (
     playlist_song_id SERIAL PRIMARY KEY,
     playlist_id INT NOT NULL REFERENCES playlists(playlist_id) ON DELETE CASCADE,
     song_id INT NOT NULL REFERENCES songs(song_id) ON DELETE CASCADE
 );
+

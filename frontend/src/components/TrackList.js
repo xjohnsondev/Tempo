@@ -2,7 +2,7 @@ import TempoApi from '../api';
 import './TrackList.css';
 
 
-const TrackList = ({ songs }) => {
+const TrackList = ({ songs, handleSongSelect }) => {
     const formatTrackLength = (length) => {
         // Extract hours, minutes, and seconds
         const [hours, minutes, seconds] = length.split(':');
@@ -35,7 +35,7 @@ const TrackList = ({ songs }) => {
             <ul className='tracklist'>
                 {songs.map((song) => (
                     <li className='listing' key={song.song_id}>
-                        <img className="listing-art" src={song.artwork_image} alt='Album Art' />
+                        <img className="listing-art" src={song.artwork_image} alt='Album Art' onClick={() => handleSongSelect(song)}/>
                         <div className='song-details'>
                             <h4>
                                 {song.song_name}

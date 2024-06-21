@@ -32,8 +32,13 @@ class TempoApi {
    * @returns {object} - The data returned from the API.
    */
   static async getDisc() {
-    let res = await this.request(``);
-    return res;
+    try {
+      let res = await this.request(``);
+      return res;
+    } catch (error) {
+      console.error("Error in getDisc:", error);
+      throw error; // Propagate the error to the caller
+    }
   }
 
   /**

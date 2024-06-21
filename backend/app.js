@@ -2,6 +2,7 @@ const Album = require("./models/album");
 const Song = require("./models/song");
 const Playlist = require("./models/playlist");
 
+const path = require('path');
 const express = require("express");
 const cors = require("cors");
 
@@ -42,7 +43,8 @@ app.get("/", async (req, res, next) => {
 // Route to serve the MP3 files
 // http://localhost:3000/music/albumFolderName/yourfile.mp3 - route template
 // Serve static files from the "music" directory
-app.use('/music', express.static('/Users/xjohnsondev/Documents/coding/Tempo/backend/music'));
+const musicPath = path.join(__dirname, 'music');
+app.use('/music', express.static(musicPath));
 
 /** Handle 404 errors -- this matches everything */
 app.use(function (req, res, next) {
