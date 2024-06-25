@@ -115,7 +115,7 @@ VALUES
     ('Armistice', 5, 6, 'Rock', 'Wolfgang Amadeus/Armistice.mp3', '00:03:06', FALSE),
 
     -- Songs from "hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚"
-    ('avOcadO SHakE૮꒰ ˶• ༝ •˶꒱ა ̅_̅/̷̚ʾ', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/avOcadO SHakE૮꒰ ˶• ༝ •˶꒱ა ̅_̅/̷̚ʾ.mp3', '00:03:45', TRUE),
+    ('avOcadO SHakE૮꒰ ˶• ༝ •˶꒱ა ̅_̅/̷̚ʾ', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/avOcadO SHakE૮꒰ ˶• ༝ •˶꒱ა.mp3', '00:03:45', TRUE),
     ('SPIKY BOiz', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/SPIKY BOiz.mp3', '00:04:10', TRUE),
     ('LiGhT rAiLs ＊ੈ✩‧₊˚', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/LiGhT rAiLs ＊ੈ✩‧₊˚.mp3', '00:03:55', TRUE),
     ('yes LOvELy', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/yes LOvELy.mp3', '00:04:25', TRUE),
