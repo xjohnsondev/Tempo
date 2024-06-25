@@ -115,11 +115,11 @@ VALUES
     ('Armistice', 5, 6, 'Rock', 'Wolfgang Amadeus/Armistice.mp3', '00:03:06', FALSE),
 
     -- Songs from "hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚"
-    ('avOcadO SHakE૮꒰ ˶• ༝ •˶꒱ა ̅_̅/̷̚ʾ', 6, 7, 'Pop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/avOcadO SHakE૮꒰ ˶• ༝ •˶꒱ა ̅_̅/̷̚ʾ.mp3', '00:03:45', TRUE),
+    ('avOcadO SHakE૮꒰ ˶• ༝ •˶꒱ა ̅_̅/̷̚ʾ', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/avOcadO SHakE૮꒰ ˶• ༝ •˶꒱ა ̅_̅/̷̚ʾ.mp3', '00:03:45', TRUE),
     ('SPIKY BOiz', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/SPIKY BOiz.mp3', '00:04:10', TRUE),
-    ('LiGhT rAiLs *ੈ✩‧₊˚', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/LiGhT rAiLs *ੈ✩‧₊˚.mp3', '00:03:55', TRUE),
+    ('LiGhT rAiLs ＊ੈ✩‧₊˚', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/LiGhT rAiLs ＊ੈ✩‧₊˚.mp3', '00:03:55', TRUE),
     ('yes LOvELy', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/yes LOvELy.mp3', '00:04:25', TRUE),
-    ('L’Eggo MY EGO', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/L’Eggo MY EGO.mp3', '00:04:00', TRUE),
+    ('L''Eggo MY EGO', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/L''Eggo MY EGO.mp3', '00:04:00', TRUE),
     ('thanksgivin', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/thanksgivin.mp3', '00:03:50', TRUE),
     ('COuGhDrOPs (,,Ծ‸Ծ,, )', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/COuGhDrOPs (,,Ծ‸Ծ,, ).mp3', '00:04:15', TRUE),
     ('i KnOW itS LatE… ♥︎(❀❛ ֊ ❛„)♡', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/i KnOW itS LatE… ♥︎(❀❛ ֊ ❛„)♡.mp3', '00:04:05', TRUE),
@@ -132,7 +132,7 @@ VALUES
     ('PLAYSTATION 2', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/PLAYSTATION 2.mp3', '00:04:15', TRUE),
     ('a LEAp in tIME', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/a LEAp in tIME.mp3', '00:04:05', TRUE),
     ('rUN tHE FaDE', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/rUN tHE FaDE.mp3', '00:03:45', FALSE),
-    ('STeAKFACe** ᕙ(⇀‸↼‶)ᕗ', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/STeAKFACe** ᕙ(⇀‸↼‶)ᕗ.mp3', '00:04:10', TRUE),
+    ('STeAKFACe** ᕙ(⇀‸↼‶)ᕗ', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/STeAKFACe＊＊ ᕙ(⇀‸↼‶)ᕗ.mp3', '00:04:10', TRUE),
     ('SLOPES', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/SLOPES.mp3', '00:03:55', TRUE),
     ('♡ StiCKy piCtURe SyNDroMe ʕ•́ᴥ•̀ʔっ♡', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/♡ StiCKy piCtURe SyNDroMe ʕ•́ᴥ•̀ʔっ♡.mp3', '00:04:25', FALSE),
     ('WOWoW! ✎ (❁ᴗ͈ˬᴗ͈)', 6, 7, 'Hip Hop', 'hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚/WOWoW! ✎ (❁ᴗ͈ˬᴗ͈).mp3', '00:04:00', FALSE),
