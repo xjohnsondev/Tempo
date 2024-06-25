@@ -37,6 +37,14 @@ const Playback = ({ selectedSong }) => {
 
     return (
         <div className="playback">
+
+            {selectedSong &&
+                <div className='playback-info'>
+                    <img src={selectedSong.artwork_image} alt='artwork' />
+                    <h4>{selectedSong.song_name}</h4>
+                    <span>{selectedSong.artist_name}</span>
+                </div>
+            }
             <AudioPlayer
                 showDownloadProgress={false}
                 autoPlay

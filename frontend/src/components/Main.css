@@ -1,12 +1,12 @@
-.main-home {
+div .main-home {
     position: absolute;
     top: 60px;
-    left: 80px;
+    left: 100px;
     right: 10px;
     bottom: 105px !important;
     background-color: #212121;
     border-radius: 8px;
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x: hidden;
     scrollbar-color: #A91D3A transparent !important;
     scrollbar-width: thin;

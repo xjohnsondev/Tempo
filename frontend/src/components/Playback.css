@@ -61,3 +61,27 @@
 .rhap_volume-indicator {
     background-color: #fff;
 }
+
+.playback-info img {
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    height: 65px;
+    width: auto;
+    border-radius: 8px;
+}
+
+.playback-info h4 {
+    position: absolute;
+    left: 100px;
+    top: 10px;
+    color: #EEEEEE;
+}
+
+.playback-info span {
+    position: absolute;
+    left: 100px;
+    top: 55px;
+    font-size: small;
+    color: #808080;
+}

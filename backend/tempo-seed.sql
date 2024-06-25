@@ -13,7 +13,8 @@ VALUES
     ('Daft Punk', 'Bio of Daft Punk', 'dp_profile.jpg'),
     ('Lauryn Hill', 'Bio of Lauryn Hill', 'lh_profile.jpg'),
     ('Tame Impala', 'Bio of Tame Impala', 'ti_profile.jpg'),
-    ('Phoenix', 'Bio of Phoenix', 'ph_profile.jpg');
+    ('Phoenix', 'Bio of Phoenix', 'ph_profile.jpg'),
+    ('1999 Write the Future', 'Bio of 1999 Write the Future', '19_profile.jpg');
 
 -- Seed data for albums table
 INSERT INTO albums (album_name, artist_id, artwork_image)
@@ -23,11 +24,13 @@ VALUES
     ('The Miseducation of Lauryn Hill', 3, '/images/miseducation_cover.jpg'),
     ('Thriller', 1, '/images/thriller_cover.png'),
     ('Currents', 4, '/images/currents_cover.png'),
-    ('Wolfgang Amadeus', 5, '/images/wolfgang_cover.png');
+    ('Wolfgang Amadeus', 5, '/images/wolfgang_cover.png'),
+    ('hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚', 6, '/images/hella_cover.png');
 
 -- Seed data for songs table
 INSERT INTO songs (song_name, artist_id, album_id, genre, file_path, track_length, is_explicit)
 VALUES
+
     -- Songs from "Bad"
     ('Bad', 1, 1, 'Pop', 'Bad/Bad.mp3', '00:04:07', FALSE),
     ('The Way You Make Me Feel', 1, 1, 'Pop', 'Bad/The Way You Make Me Feel.mp3', '00:04:58', FALSE),
@@ -109,7 +112,33 @@ VALUES
     ('Rome', 5, 6, 'Rock', 'Wolfgang Amadeus/Rome.mp3', '00:04:49', FALSE),
     ('Countdown', 5, 6, 'Rock', 'Wolfgang Amadeus/Countdown.mp3', '00:04:00', FALSE),
     ('Girlfriend', 5, 6, 'Rock', 'Wolfgang Amadeus/Girlfriend.mp3', '00:03:24', FALSE),
-    ('Armistice', 5, 6, 'Rock', 'Wolfgang Amadeus/Armistice.mp3', '00:03:06', FALSE);
+    ('Armistice', 5, 6, 'Rock', 'Wolfgang Amadeus/Armistice.mp3', '00:03:06', FALSE),
+
+    -- Songs from "hella (˃̣̣̥╭╮˂̣̣̥) ✧ ♡ ‧º·˚"
+    ('avOcadO SHakE૮꒰ ˶• ༝ •˶꒱ა ̅_̅/̷̚ʾ', 6, 7, 'Pop', 'hella/avOcadO SHakE.mp3', '00:03:45', TRUE),
+    ('SPIKY BOiz', 6, 7, 'Hip Hop', 'hella/SPIKY BOiz.mp3', '00:04:10', TRUE),
+    ('LiGhT rAiLs *ੈ✩‧₊˚', 6, 7, 'Hip Hop', 'hella/LiGhT rAiLs.mp3', '00:03:55', TRUE),
+    ('yes LOvELy', 6, 7, 'Hip Hop', 'hella/yes LOvELy.mp3', '00:04:25', TRUE),
+    ('L’Eggo MY EGO', 6, 7, 'Hip Hop', 'hella/L’Eggo MY EGO.mp3', '00:04:00', TRUE),
+    ('thanksgivin', 6, 7, 'Hip Hop', 'hella/thanksgivin.mp3', '00:03:50', TRUE),
+    ('COuGhDrOPs (,,Ծ‸Ծ,, )', 6, 7, 'Hip Hop', 'hella/COuGhDrOPs.mp3', '00:04:15', TRUE),
+    ('i KnOW itS LatE… ♥︎(❀❛ ֊ ❛„)♡', 6, 7, 'Hip Hop', 'hella/i KnOW itS LatE.mp3', '00:04:05', TRUE),
+    ('cOoL WATeR foR thE nIGHT', 6, 7, 'Hip Hop', 'hella/cOoL WATeR foR thE nIGHT.mp3', '00:03:45', FALSE),
+    ('MiNt cHoCoLaTe', 6, 7, 'Hip Hop', 'hella/MiNt cHoCoLaTe.mp3', '00:04:10', TRUE),
+    ('JoEys song ༼つ ◕_◕ ༽つ', 6, 7, 'Hip Hop', 'hella/JoEys song.mp3', '00:03:55', FALSE),
+    ('BiG IsLaND jazz hOUr', 6, 7, 'Hip Hop', 'hella/BiG IsLaND jazz hOUr.mp3', '00:04:25', FALSE),
+    ('LONG in the tOOth', 6, 7, 'Hip Hop', 'hella/LONG in the tOOth.mp3', '00:04:00', TRUE),
+    ('PrAisE nIgHt BluES InteRLUde', 6, 7, 'Hip Hop', 'hella/PrAisE nIgHt BluES InteRLUde.mp3', '00:03:50', FALSE),
+    ('PLAYSTATION 2', 6, 7, 'Hip Hop', 'hella/PLAYSTATION 2.mp3', '00:04:15', TRUE),
+    ('a LEAp in tIME', 6, 7, 'Hip Hop', 'hella/a LEAp in tIME.mp3', '00:04:05', TRUE),
+    ('rUN tHE FaDE', 6, 7, 'Hip Hop', 'hella/rUN tHE FaDE.mp3', '00:03:45', FALSE),
+    ('STeAKFACe** ᕙ(⇀‸↼‶)ᕗ', 6, 7, 'Hip Hop', 'hella/STeAKFACe.mp3', '00:04:10', TRUE),
+    ('SLOPES', 6, 7, 'Hip Hop', 'hella/SLOPES.mp3', '00:03:55', TRUE),
+    ('♡ StiCKy piCtURe SyNDroMe ʕ•́ᴥ•̀ʔっ♡', 6, 7, 'Hip Hop', 'hella/StiCKy piCtURe SyNDroMe.mp3', '00:04:25', FALSE),
+    ('WOWoW! ✎ (❁ᴗ͈ˬᴗ͈)', 6, 7, 'Hip Hop', 'hella/WOWoW!.mp3', '00:04:00', FALSE),
+    ('silence STArEs me down', 6, 7, 'Hip Hop', 'hella/silence STArEs me down.mp3', '00:03:50', TRUE),
+    ('VOoDOo BOogie', 6, 7, 'Hip Hop', 'hella/VOoDOo BOogie.mp3', '00:04:15', TRUE),
+    ('siGiL aNd the MaZE ✼ ҉ ✼ ҉', 6, 7, 'Hip Hop', 'hella/siGiL aNd the MaZE.mp3', '00:04:05', FALSE);
 
 
 -- Seed data for playlists table
@@ -137,4 +166,6 @@ VALUES
     (3, 54),  -- Adding 'Eventually' to Chill Vibes playlist
     (6, 56),  -- Adding 'The Less I Know The Better' to Relaxation playlist
     (1, 65),  -- Adding 'Fences' to Favorites playlist
-    (3, 63);  -- Adding 'Lisztomania' to Favorites playlist
+    (3, 63),  -- Adding 'Lisztomania' to Chill Vibes playlist
+    (1, 72),  -- Adding 'Advocado Shake' to Favorites playlist
+    (2, 92);  -- Adding 'Wowow' to Workout Mix playlist
