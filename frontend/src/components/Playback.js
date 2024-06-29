@@ -50,7 +50,6 @@ const Playback = ({ selectedSong }) => {
                 autoPlay
                 showSkipControls
                 showJumpControls={false}
-                src=""
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
                 ref={playerRef}

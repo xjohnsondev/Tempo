@@ -4,8 +4,7 @@ import TempoApi from '../api';
 import TrackList from './TrackList';
 import { v4 as uuidv4 } from "uuid";
 
-
-const Main = ({ handleSectionChange, activeSection, handleSongSelect }) => {
+const Main = ({ handleSectionChange, activeSection, handleSongSelect, setTracklistInfo, tracklistInfo }) => {
     const [discover, setDiscover] = useState({ albumData: [], genreData: [] });
     const [songs, setSongs] = useState([]);
 
@@ -40,7 +39,31 @@ const Main = ({ handleSectionChange, activeSection, handleSongSelect }) => {
         handleSectionChange('trackList');
     }
 
-    if (!discover) {
+    async function handleTracklistInfo(data) {
+        try {
+            if (data.artist_id) {
+              const artist = await TempoApi.getArtistById(data.artist_id);
+              
+              // Update tracklistInfo based on artist data
+              setTracklistInfo({
+                image: data.image,
+                title: data.title,
+                info: artist.artist.bio, 
+              });
+            } else {
+              // Handle case where data.artist_id does not exist (album was not clicked)
+              setTracklistInfo({
+                image: data.image,
+                title: data.title,
+                info: "",
+              });
+            }
+          } catch (error) {
+            console.error("Error fetching artist:", error);
+          }
+    }
+
+    if (!discover || !tracklistInfo) {
         return <div>Loading...</div>;
     }
 
@@ -52,7 +75,14 @@ const Main = ({ handleSectionChange, activeSection, handleSongSelect }) => {
                         <h1>Discover</h1>
                         <ul className='disc-list'>
                             {discover.albumData.map((tile) => (
-                                <li key={uuidv4()} onClick={() => handleAlbumClick(tile.album_id)}>
+                                <li key={uuidv4()} onClick={async () => {
+                                    await handleAlbumClick(tile.album_id);
+                                    handleTracklistInfo({
+                                        title: tile.album_name,
+                                        image: tile.artwork_image,
+                                        artist_id: tile.artist_id,
+                                    });
+                                }}>
                                     <img src={tile.artwork_image} alt="Album Artwork" />
                                 </li>
                             ))}
@@ -63,7 +93,13 @@ const Main = ({ handleSectionChange, activeSection, handleSongSelect }) => {
                         <ul className='disc-list'>
                             {discover.genreData.map((genre) => (
                                 <li className="browse-list" key={uuidv4()}
-                                    onClick={() => handleGenreClick(genre.genre)}
+                                    onClick={() => {
+                                        handleGenreClick(genre.genre);
+                                        handleTracklistInfo({
+                                            title: genre.genre,
+                                            image: `/images/${genre.genre}Icon.png`,
+                                        });
+                                    }}
                                 >
                                     <div className="genre-container">
                                         <img src={`/images/${genre.genre}Icon.png`} alt={`${genre.genre} icon`} />
@@ -73,16 +109,11 @@ const Main = ({ handleSectionChange, activeSection, handleSongSelect }) => {
                             ))}
                         </ul>
                     </div>
-
-
                 </div>
             )}
-            {activeSection === 'trackList' && <TrackList songs={songs.songs} handleSongSelect={handleSongSelect} />}
-
-
+            {activeSection === 'trackList' && <TrackList songs={songs.songs} tracklistInfo={tracklistInfo} handleSongSelect={handleSongSelect} />}
         </div>
     );
 };
-
 
 export default Main;

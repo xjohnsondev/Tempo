@@ -19,9 +19,8 @@
     height: 90px;
     max-width: 30%;
     margin: 5px auto 0 auto;
+    min-width: 300px;
 }
-
-
 
 .rhap_progress-container .rhap_progress-filled {
     background-color: #EE4C7C !important;
@@ -33,10 +32,12 @@
 
 .rhap_current-time{
     color: #555;
+    max-width: 40px;
 }
 
 .rhap_total-time{
     color: #555;
+    max-width: 40px;
 }
 
 .rhap_controls {
@@ -76,6 +77,10 @@
     left: 100px;
     top: 10px;
     color: #EEEEEE;
+    max-width: calc(100% - 750px);    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .playback-info span {
@@ -84,4 +89,14 @@
     top: 55px;
     font-size: small;
     color: #808080;
+    max-width: calc(100% - 750px);    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 800px){
+    .playback-info h4, .playback-info span {
+        display: none;
+    }
 }

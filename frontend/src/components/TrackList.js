@@ -2,7 +2,7 @@ import TempoApi from '../api';
 import './TrackList.css';
 
 
-const TrackList = ({ songs, handleSongSelect }) => {
+const TrackList = ({ songs, handleSongSelect, tracklistInfo }) => {
     const formatTrackLength = (length) => {
         // Extract hours, minutes, and seconds
         const [hours, minutes, seconds] = length.split(':');
@@ -25,11 +25,19 @@ const TrackList = ({ songs, handleSongSelect }) => {
 
     return (
         <div>
-            {console.table(songs)}
+            {/* {console.table(songs)} */}
+            {console.log(tracklistInfo)}
+
+            <div className='tracklist-top'>
+                <img src={tracklistInfo.image} className='top-img'/>
+                <span className='top-title'>{tracklistInfo.title}</span>
+                {tracklistInfo.info && <span className='top-info'>{tracklistInfo.info}</span>}
+            </div>
+
             <div className='tracklist-header'>
                 <div className='header-title'>Title</div>
-                <div className='header-plays'>Plays</div>
-                <div className='header-length'>Length</div>
+                <div className='header-plays'><i className="fa-solid fa-play"></i></div>
+                <div className='header-length'><i className="fa-solid fa-clock"></i></div>
             </div>
             
             <ul className='tracklist'>

@@ -10,7 +10,7 @@ CREATE TABLE users (
 CREATE TABLE artists (
     artist_id SERIAL PRIMARY KEY,
     artist_name VARCHAR(100) NOT NULL,
-    bio VARCHAR(500),
+    bio VARCHAR(1000),
     profile_picture VARCHAR(255) NOT NULL
 );
 

@@ -5,7 +5,7 @@ const axios = require("axios");
 class Playlist {
 
     /****
-     * Returns playlist with of given user_id
+     * Returns playlist of given user_id
      * 
      ****/
     static async getUserPlaylists(user_id) {

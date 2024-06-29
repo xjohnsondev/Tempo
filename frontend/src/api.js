@@ -84,6 +84,20 @@ class TempoApi {
     let res = await this.request(`albums/cover/${album_id}`);
     return res;
   }
+
+   /**
+   * Get artist for a specific artist_id.
+   * 
+   * @param {string} artist_id - The ID of the artist.
+   * @returns {object} - The data returned from the API.
+   */
+  static async getArtistById(artist_id) {
+    let res = await this.request(`artists/${artist_id}`);
+    return res;
+  }
+
+
+
 }
 
 

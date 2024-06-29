@@ -9,12 +9,12 @@ VALUES
 -- Seed data for artists table
 INSERT INTO artists (artist_name, bio, profile_picture)
 VALUES
-    ('Michael Jackson', 'Bio of Michael Jackson', 'mj_profile.jpg'),
-    ('Daft Punk', 'Bio of Daft Punk', 'dp_profile.jpg'),
-    ('Lauryn Hill', 'Bio of Lauryn Hill', 'lh_profile.jpg'),
-    ('Tame Impala', 'Bio of Tame Impala', 'ti_profile.jpg'),
-    ('Phoenix', 'Bio of Phoenix', 'ph_profile.jpg'),
-    ('1999 Write the Future', 'Bio of 1999 Write the Future', '19_profile.jpg');
+    ('Michael Jackson', 'Michael Jackson, an iconic figure in music history, revolutionized pop music with his unparalleled talent and groundbreaking dance moves. From his early days with the Jackson 5 to his solo career marked by albums like "Thriller," he remains the King of Pop, influencing generations with his innovative style and unforgettable performances. His legacy continues to inspire artists worldwide, solidifying his status as one of the greatest entertainers of all time.', 'mj_profile.jpg'),
+    ('Daft Punk', 'Daft Punk, the French electronic music duo, reshaped the electronic music landscape with their futuristic sound and iconic robot personas. Known for albums like "Discovery" and "Random Access Memories," they pioneered a blend of house, funk, and disco that captivated global audiences. Their influence extends beyond music, leaving a lasting imprint on pop culture with their innovative music videos and legendary live performances.', 'dp_profile.jpg'),
+    ('Lauryn Hill', 'Lauryn Hill, a multifaceted artist, rose to prominence as a member of The Fugees before embarking on a solo career that redefined R&B and hip-hop. Her debut album, "The Miseducation of Lauryn Hill," showcased her soulful voice and socially conscious lyrics, earning critical acclaim and multiple Grammy Awards. Beyond music, Hill''s impact as a cultural icon and advocate for social justice continues to resonate, cementing her legacy as a pioneering figure in contemporary music.', 'lh_profile.jpg'),
+    ('Tame Impala', 'Tame Impala, led by Kevin Parker, has captivated audiences with their psychedelic rock sound characterized by dreamy melodies and intricate production. From their debut album "Innerspeaker" to later works like "Currents," they have pushed the boundaries of indie music, blending nostalgic influences with modern electronic elements. Tame Impala''s music has garnered widespread acclaim, influencing a new wave of psychedelic and alternative rock, solidifying their place as innovators in the music industry.', 'ti_profile.jpg'),
+    ('Phoenix', 'Phoenix, the French indie pop band, has enchanted listeners with their infectious melodies and sophisticated songwriting since the early 2000s. Known for albums like "Wolfgang Amadeus Phoenix," their music blends electronic, rock, and pop elements into a distinctive sound that evokes both nostalgia and contemporary flair. Phoenix''s energetic live performances and enduring appeal across international audiences underscore their status as pioneers of modern indie pop music.', 'ph_profile.jpg'),
+    ('1999 Write the Future', '1999 Write the Future has gained attention for their artistic flair and the expressive nature of their music, appealing to listeners with its creative lyrics and distinctive beats. Through their work, "1999" continues to push boundaries in the hip hop scene, leaving a memorable impact on their audience.', '19_profile.jpg');
 
 -- Seed data for albums table
 INSERT INTO albums (album_name, artist_id, artwork_image)
