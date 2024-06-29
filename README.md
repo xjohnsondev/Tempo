@@ -6,10 +6,7 @@ This project is still in development - currently on hold due to hackathon
 
 ## Features
 
-- [Feature 1]
-- [Feature 2]
-- [Feature 3]
-- More to be added as project continues development...
+- To be added as project continues development...
 
 ## Technologies Used
 
