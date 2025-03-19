@@ -8,6 +8,10 @@ This project is still in development - currently on hold due to hackathon
 
 - To be added as project continues development...
 
+## Screenshots
+
+![Tempo Screenshot](./frontend/public/images/screenshot.png)
+
 ## Technologies Used
 
 - React
@@ -19,7 +23,7 @@ This project is still in development - currently on hold due to hackathon
 
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+To get a local copy up and running follow these simple steps. (Warning - Large file size)
 
 ### Installation
 
